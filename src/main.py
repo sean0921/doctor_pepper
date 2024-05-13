@@ -24,8 +24,6 @@ def calculate_area():
         result_str = f"結果: {result_area:.4f} {to_unit}"
         label_result.config(text=result_str)
 
-        # 儲存結果到剪貼簿
-        pyperclip.copy(result_str)
     except ValueError:
         label_result.config(text="錯誤: 請輸入有效的數值")
 
@@ -63,7 +61,8 @@ label_result.grid(row=4, column=0, columnspan=2, padx=10, pady=10)
 def copy_result():
     result_str = label_result.cget("text")
     if result_str.startswith("結果:"):
-        pyperclip.copy(result_str[4:])  # 去除"結果: "後複製
+        result_str = result_str.replace("結果: ", "")  # 移除前綴的 "結果: "
+        pyperclip.copy(result_str)
         label_result.config(text="已複製到剪貼簿")
 
 btn_copy = ttk.Button(root, text="複製結果", command=copy_result)
