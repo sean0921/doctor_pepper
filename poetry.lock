@@ -1,4 +1,12 @@
 [[package]]
+name = "pyperclip"
+version = "1.8.2"
+description = "A cross-platform clipboard module for Python. (Only handles plain text for now.)"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "tk"
 version = "0.1.0"
 description = "TensorKit is a deep learning helper between Python and C++."
@@ -9,7 +17,8 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "1c343f83201838cce462a72c3cb7cf49aa5192eec19abe710a70a7a1eee02715"
+content-hash = "50fab649dc496a17334ce2bb9921a21f30afcc1e783b49ab68d943e25697e55c"
 
 [metadata.files]
+pyperclip = []
 tk = []

@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+import pyperclip
 
 # 定義面積單位之間的換算比例
 area_units = {
@@ -20,7 +21,11 @@ def calculate_area():
         result_area = input_area * (area_units[from_unit] / area_units[to_unit])
 
         # 顯示換算後的結果
-        label_result.config(text=f"結果: {result_area:.4f} {to_unit}")
+        result_str = f"結果: {result_area:.4f} {to_unit}"
+        label_result.config(text=result_str)
+
+        # 儲存結果到剪貼簿
+        pyperclip.copy(result_str)
     except ValueError:
         label_result.config(text="錯誤: 請輸入有效的數值")
 
@@ -53,6 +58,16 @@ btn_calculate.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
 label_result = ttk.Label(root, text="")
 label_result.grid(row=4, column=0, columnspan=2, padx=10, pady=10)
+
+# 添加複製結果的按鈕
+def copy_result():
+    result_str = label_result.cget("text")
+    if result_str.startswith("結果:"):
+        pyperclip.copy(result_str[4:])  # 去除"結果: "後複製
+        label_result.config(text="已複製到剪貼簿")
+
+btn_copy = ttk.Button(root, text="複製結果", command=copy_result)
+btn_copy.grid(row=5, column=0, columnspan=2, padx=10, pady=10)
 
 # 啟動主視窗的事件迴圈
 root.mainloop()
