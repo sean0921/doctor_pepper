@@ -53,13 +53,13 @@ label_from = ttk.Label(root, text="原始單位:")
 label_from.grid(row=1, column=0, padx=10, pady=10)
 combo_from = ttk.Combobox(root, values=list(area_units.keys()))
 combo_from.grid(row=1, column=1, padx=10, pady=10)
-combo_from.current(0)  # 預設選擇第一個單位
+combo_from.current(2)  # 預設選擇第2個單位
 
 label_to = ttk.Label(root, text="轉換為:")
 label_to.grid(row=2, column=0, padx=10, pady=10)
 combo_to = ttk.Combobox(root, values=list(area_units.keys()))
 combo_to.grid(row=2, column=1, padx=10, pady=10)
-combo_to.current(1)  # 預設選擇第二個單位
+combo_to.current(6)  # 預設選擇第6個單位
 
 # 添加計算按鈕和結果標籤
 btn_calculate = ttk.Button(root, text="換算", command=calculate_area)
