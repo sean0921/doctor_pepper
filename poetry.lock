@@ -1,15 +1,31 @@
 [[package]]
-name = "tk"
-version = "0.1.0"
-description = "TensorKit is a deep learning helper between Python and C++."
+name = "pycairo"
+version = "1.26.0"
+description = "Python interface for cairo"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.8"
+
+[[package]]
+name = "pygobject"
+version = "3.48.2"
+description = "Python bindings for GObject Introspection"
+category = "main"
+optional = false
+python-versions = "<4,>=3.8"
+
+[package.dependencies]
+pycairo = ">=1.16"
+
+[package.extras]
+dev = ["pytest", "pytest-cov", "flake8"]
+docs = ["sphinx (>=4.0,<5.0)", "sphinx-rtd-theme (>=0.5,<2.0)"]
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "1c343f83201838cce462a72c3cb7cf49aa5192eec19abe710a70a7a1eee02715"
+content-hash = "2db4eb0e4b8642daf51f1f6484833329efa3e4fdfa2ed984f17f542af7679498"
 
 [metadata.files]
-tk = []
+pycairo = []
+pygobject = []

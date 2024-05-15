@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "area_calc"
+name = "area_calc_gtk"
 version = "0.1.0"
 description = "ChatGPT hahaha"
 authors = ["ChatGPT"]
@@ -7,7 +7,7 @@ license = "Unlicense"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-tk = "^0.1.0"
+PyGObject = "^3.42.1"
 
 [tool.poetry.dev-dependencies]
 
